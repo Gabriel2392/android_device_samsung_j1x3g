@@ -2,7 +2,7 @@
 
 I used:
 
-Ubuntu 14.04
+Ubuntu 14.04 
 
 openjdk-7-jdk
 
