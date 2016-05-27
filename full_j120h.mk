@@ -38,7 +38,8 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    $(LOCAL_PATH)/init.recovery.universal3475.rc:root/init.recovery.samsungexynos7420.rc \
+    $(LOCAL_PATH)/init.recovery.board.rc:root/init.recovery.board.rc \
+    $(LOCAL_PATH)/init.recovery.universal.rc:root/init.recovery.universal.rc \
     $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/recovery.fstab
 
 
