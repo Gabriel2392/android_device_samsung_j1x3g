@@ -38,7 +38,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j120h/dtb.img
 
 
-TARGET_KERNEL_SOURCE := kernel/samsung/j120h
+#TARGET_KERNEL_SOURCE := kernel/samsung/j120h
 
 #Partitions 0x360000000
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x360000000
@@ -51,10 +51,6 @@ TARGET_PREBUILT_KERNEL := device/samsung/j120h/kernel
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_INITRC := device/samsung/j120h/init.rc
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
-
-
-# PowerHAL
-#TARGET_POWERHAL_VARIANT := exynos3
 
 
 BOARD_HAS_LARGE_FILESYSTEM := true
