@@ -48,7 +48,7 @@ TARGET_PREBUILT_KERNEL := device/samsung/j1x3g/kernel
 
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_RECOVERY_INITRC := device/samsung/j1x3g/init.rc
+#TARGET_RECOVERY_INITRC := device/samsung/j1x3g/init.rc
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
 
 
@@ -61,10 +61,13 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
 RECOVERY_SDCARD_ON_DATA := true
-BOARD_HAS_NO_REAL_SDCARD := true
+
+BOARD_HAS_NO_REAL_SDCARD := false
+
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_INTERNAL_STORAGE_PATH := "/internal_sd"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "internal_sd"
+
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 162
@@ -72,3 +75,8 @@ TW_EXCLUDE_SUPERSU := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
+
+# USB Mounting
+TW_MTP_DEVICE := "/dev/mtp_usb"
+BOARD_UMS_LUNFILE := "/sys/devices/20200000.usb/gadget/lun0/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/20200000.usb/gadget/lun0/file"
