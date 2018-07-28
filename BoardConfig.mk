@@ -1,9 +1,8 @@
 # Define Local path
-LOCAL_PATH := device/samsung/j120h
+LOCAL_PATH := device/samsung/j1x3g
 
 # Vendorname
 BOARD_VENDOR := samsung
-
 
 # Architecture
 TARGET_ARCH := arm
@@ -27,7 +26,7 @@ COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := j120h
+TARGET_BOOTLOADER_BOARD_NAME := SC7727SE
 
 
 #Kernel
@@ -35,21 +34,21 @@ BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j120h/dtb.img
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j1x3g/dtb.img
 
 
-#TARGET_KERNEL_SOURCE := kernel/samsung/j120h
+#TARGET_KERNEL_SOURCE := kernel/samsung/j1x3g
 
 #Partitions 0x360000000
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x360000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x360000000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/samsung/j120h/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/j1x3g/kernel
 
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_RECOVERY_INITRC := device/samsung/j120h/init.rc
+TARGET_RECOVERY_INITRC := device/samsung/j1x3g/init.rc
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
 
 

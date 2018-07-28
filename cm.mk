@@ -1,7 +1,7 @@
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-LOCAL_PATH := device/samsung/j120h
+LOCAL_PATH := device/samsung/j1x3g
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -13,7 +13,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/file_contexts:recovery/root/prebuilt_file_contexts
 
 
+$(call inherit-product, device/samsung/j1x3g/j1x3gxx.mk)
 
-$(call inherit-product, device/samsung/j120h/full_j120h.mk)
-
-PRODUCT_NAME := cm_j120h
+PRODUCT_NAME := j1x3gxx
