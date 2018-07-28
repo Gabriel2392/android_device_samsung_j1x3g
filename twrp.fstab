@@ -5,4 +5,4 @@
 /system		ext4		/dev/block/platform/sdio_emmc/by-name/SYSTEM 
 /efs		ext4		/dev/block/platform/sdio_emmc/by-name/efs flags=display="efs";backup=1
 /wmodem		emmc		/dev/block/platform/sdio_emmc/by-name/MODEM flags=display="wmodem";backup=1
-/sdcard            vfat    /dev/block/platform/sdio_sd/mmcblk1p1  /dev/block/mmcblk1   flags=display="Micro SDcard";storage;wipeingui;removable
+/extSdCard            vfat    /dev/block/platform/sdio_sd/mmcblk1p1  /dev/block/mmcblk1   flags=display="Micro SDcard";storage;wipeingui;removable
