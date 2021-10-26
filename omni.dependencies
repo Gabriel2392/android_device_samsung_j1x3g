@@ -1,8 +1,0 @@
-[
-  {
-    "remote": "github",
-    "repository": "ukroplus/android_device_samsung_j1x3g",
-    "target_path": "device/samsung/j1x3g",
-    "revision": "cm-12.1"
-  } 
-]

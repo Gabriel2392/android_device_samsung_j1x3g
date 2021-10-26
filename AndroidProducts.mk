@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_PATH)/j1x3gxx.mk
+    device/samsung/j1x3g/omni_j1x3g.mk

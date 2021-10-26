@@ -1,0 +1,35 @@
+on boot
+
+    setprop sys.usb.config none
+
+    write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
+    write /sys/class/android_usb/android0/iProduct ${ro.product.model}
+    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
+    write /sys/class/android_usb/android0/bDeviceClass 0
+    write /sys/class/android_usb/android0/bDeviceSubClass 0
+    write /sys/class/android_usb/android0/bDeviceProtocol 0
+    write /sys/class/android_usb/f_mass_storage/inquiry_string "Samsung"
+
+    setprop sys.usb.config ${persist.sys.usb.config}
+
+on property:sys.usb.config=none
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 04E8
+    write /sys/class/android_usb/android0/idProduct 685E
+    write /sys/class/android_usb/android0/bDeviceClass 0
+
+on property:sys.usb.config=mtp,adb
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 04E8
+    write /sys/class/android_usb/android0/idProduct 6860
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+
+on property:sys.usb.config=adb
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 04E8
+    write /sys/class/android_usb/android0/idProduct 685E
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/enable ${service.adb.root}
+    start adbd

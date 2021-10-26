@@ -19,5 +19,5 @@
 # function: add_lunch_combo generic-eng
 
 for i in eng user userdebug; do
-add_lunch_combo j1x3g-${i};
+add_lunch_combo omni_j1x3g-${i};
 done

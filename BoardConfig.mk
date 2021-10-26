@@ -36,9 +36,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j1x3g/dt.img
 
-
-#TARGET_KERNEL_SOURCE := kernel/samsung/j1x3g
-
 # MTD Partitions
 
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -47,8 +44,7 @@ TARGET_PREBUILT_KERNEL := device/samsung/j1x3g/kernel
 
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-#TARGET_RECOVERY_INITRC := device/samsung/j1x3g/init.rc
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/root/etc/recovery.fstab
 
 # FS
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -76,9 +72,6 @@ TW_HAVE_SELINUX := true
 TW_EXCLUDE_SUPERSU := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-#TW_DEFAULT_LANGUAGE := uk-UA
-#TW_INCLUDE_CRYPTO := true
-#TWRP_INCLUDE_LOGCAT := true
 
 TW_INCLUDE_FB2PNG := true
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -86,13 +79,12 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_COMMON_NAME := SM-J120H
 TW_DEVICE_VERSION := Samsung Galaxy J1 (2016) | SM-J120H
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone1/temp"
-#TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
 # Other
 ADDITIONAL_DEFAULT_PROPERTIES += \
-ro.secure=0 \
-ro.debuggable=1 \
-service.adb.root=1
+    ro.secure=0 \
+    ro.debuggable=1 \
+    service.adb.root=1
 
 TW_THEME := portrait_mdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -106,6 +98,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
 
 # USB Mounting
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 BOARD_UMS_LUNFILE := "/sys/devices/20200000.usb/gadget/lun0/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/20200000.usb/gadget/lun0/file"

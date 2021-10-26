@@ -2,12 +2,22 @@
 
 I used:
 
-Ubuntu 14.04
+Ubuntu 18.04
 
-openjdk-7-jdk
+openjdk-8-jdk
 
 ------
 
-used repo: repo init -u git://github.com/omnirom/android.git -b android-5.1
+repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-5.1 --depth=1
 
-TWRP resource: https://github.com/omnirom/android_bootable_recovery   ---- branch android 6.0 !!!
+repo sync -j4
+
+------
+clone this repo to device/samsung/j1x3g using git clone
+------
+
+. build/envsetup.sh
+
+lunch omni_j1x3g-eng
+
+make recoveryimage -j$(nproc --all)
