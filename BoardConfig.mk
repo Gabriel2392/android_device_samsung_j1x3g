@@ -16,11 +16,7 @@ TARGET_CPU_SMP := true
 TARGET_BOARD_PLATFORM := sc8830
 TARGET_BOARD_PLATFORM_GPU := ARM Mali-400MP2
 BOARD_USES_MALI_400_MP2 := true
-
-# Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CFLAGS += -DREFRESH_RATE=60
+ALLOW_MISSING_DEPENDENCIES := true
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -79,12 +75,6 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_COMMON_NAME := SM-J120H
 TW_DEVICE_VERSION := Samsung Galaxy J1 (2016) | SM-J120H
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone1/temp"
-
-# Other
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.debuggable=1 \
-    service.adb.root=1
 
 TW_THEME := portrait_mdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
