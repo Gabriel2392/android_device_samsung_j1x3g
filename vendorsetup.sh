@@ -22,4 +22,4 @@ for i in eng user userdebug; do
 add_lunch_combo omni_j1x3g-${i};
 done
 
-git clone https://android.googlesource.com/device/generic/goldfish -b lollipop-release device/generic/goldfish
+git clone https://android.googlesource.com/device/generic/goldfish -b nougat-release device/generic/goldfish
