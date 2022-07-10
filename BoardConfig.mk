@@ -20,7 +20,7 @@ BOARD_USES_MALI_400_MP2 := true
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
+TARGET_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
