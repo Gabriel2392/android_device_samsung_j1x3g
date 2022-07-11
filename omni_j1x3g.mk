@@ -12,7 +12,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
     $(LOCAL_PATH)/root/etc/recovery.fstab:recovery/root/etc/recovery.fstab \
     $(LOCAL_PATH)/root/init.recovery.board.rc:root/init.recovery.board.rc \
-    $(LOCAL_PATH)/root/init.recovery.usb.rc:root/init.recovery.usb.rc
+    $(LOCAL_PATH)/root/init.recovery.usb.rc:root/init.recovery.usb.rc \
+    $(LOCAL_PATH)/root/ueventd.sc8830.rc:root/ueventd.sc8830.rc
 
 
 $(call inherit-product, build/target/product/full.mk)

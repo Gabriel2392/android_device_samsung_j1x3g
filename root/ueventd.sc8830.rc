@@ -87,6 +87,3 @@
 /dev/download           0660     system      system
 /dev/slog_wcn           0660     system      system
 /dev/power_ctl          0660     system      system
-
-# Google FRP
-/dev/block/platform/sdio_emmc/by-name/PERSISTENT    0660    system    system
