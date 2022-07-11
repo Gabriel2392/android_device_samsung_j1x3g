@@ -23,3 +23,9 @@ add_lunch_combo omni_j1x3g-${i};
 done
 
 git clone https://android.googlesource.com/device/generic/goldfish -b nougat-release device/generic/goldfish
+
+if [ -z "$(which xz)" ]; then
+	echo "Could not find xz, which is needed for compressing ramdisk"
+	echo "Please install before building."
+	exit 1
+fi
