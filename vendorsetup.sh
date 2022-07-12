@@ -24,8 +24,8 @@ done
 
 git clone https://android.googlesource.com/device/generic/goldfish -b nougat-release device/generic/goldfish
 
-if [ -z "$(which xz)" ]; then
-	echo "Could not find xz, which is needed for compressing ramdisk"
+if [ -z "$(which lzma)" ]; then
+	echo "Could not find lzma, which is needed for compressing ramdisk"
 	echo "Please install before building."
 	exit 1
 fi
