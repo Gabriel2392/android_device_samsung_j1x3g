@@ -8,13 +8,11 @@ openjdk-8-jdk
 
 ------
 
-repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-5.1 --depth=1
+repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-7.1 --depth=1
 
 repo sync -j4
 
-------
-clone this repo to device/samsung/j1x3g using git clone
-------
+git clone https://github.com/Gabriel2392/android_device_samsung_j1x3g device/samsung/j1x3g
 
 . build/envsetup.sh
 
