@@ -18,14 +18,12 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
+if [ ! -d device/generic/goldfish ]; then
+    git clone https://android.googlesource.com/device/generic/goldfish -b nougat-release device/generic/goldfish --depth=1
+fi
+
 for i in eng user userdebug; do
 add_lunch_combo omni_j1x3g-${i};
 done
 
-git clone https://android.googlesource.com/device/generic/goldfish -b nougat-release device/generic/goldfish
-
-if [ -z "$(which lzma)" ]; then
-	echo "Could not find lzma, which is needed for compressing ramdisk"
-	echo "Please install before building."
-	exit 1
-fi
+export LC_ALL="C"
